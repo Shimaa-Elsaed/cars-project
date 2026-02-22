@@ -93,7 +93,7 @@ const Hero = () => {
 
       {/* Left Arrow */}
       <button
-        onClick={() => navigate("/page1")}
+        onClick={() => navigate("/")}
         className="
         absolute left-2 sm:left-6
         top-1/2 -translate-y-1/2

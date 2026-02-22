@@ -146,7 +146,7 @@ const Hero = () => {
       </button>
 
       <button
-        onClick={() => navigate("/page1")}
+        onClick={() => navigate("/")}
         className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 
                    bg-white/70 hover:bg-white 
                    p-2 md:p-4 
