@@ -3,7 +3,7 @@ import { Logo } from "@/assets/image";
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto px-20 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-14 py-4 flex items-center justify-between">
         <img src={Logo.logo3} />
         <ul className="hidden md:flex gap-6 text-sm font-bold">
           <li className="cursor-pointer hover:text-blue-600">Home</li>
@@ -15,7 +15,7 @@ const Navbar = () => {
           <li className="cursor-pointer hover:text-blue-600">Signin</li>
         </ul>
 
-        <button className="bg-blue-600 text-white px-2 py-2 rounded-2xl text-sm">
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-2xl text-sm">
           Submit Listing
         </button>
       </div>
