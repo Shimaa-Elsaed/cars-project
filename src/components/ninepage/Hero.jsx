@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Heros, Logo } from "@/assets/image";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Hero = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +35,9 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src={Logo.logo3} alt="logo" className="w-16 md:w-20" />
+            <img src={Logo.logo3} alt="logo" className="w-28 md:w-28" />
             <h5
-              className={`text-lg md:text-2xl font-bold transition ${
+              className={`hidden sm:block text-lg  font-bold transition ${
                 scrolled ? "text-black" : "text-white"
               }`}
             >
@@ -44,7 +46,7 @@ const Hero = () => {
           </div>
 
           {/* Links (تختفي في الموبايل) */}
-          <div
+          <ul
             className={`hidden md:flex items-center gap-6 font-medium transition ${
               scrolled ? "text-black" : "text-white"
             }`}
@@ -67,7 +69,7 @@ const Hero = () => {
             <a href="#" className="hover:text-blue-500 transition">
               Signup
             </a>
-          </div>
+          </ul>
 
           {/* Button */}
           <div className="hidden md:block">
@@ -84,8 +86,39 @@ const Hero = () => {
           </div>
 
           {/* Mobile Menu Icon */}
-          <div className="md:hidden text-white text-2xl">☰</div>
+          <div className="md:hidden">
+            {open ? (
+              <HiX
+                size={26}
+                onClick={() => setOpen(false)}
+                className="cursor-pointer"
+              />
+            ) : (
+              <HiMenu
+                size={26}
+                onClick={() => setOpen(true)}
+                className="cursor-pointer"
+              />
+            )}
+          </div>
         </div>
+
+        {open && (
+          <div className="md:hidden bg-white px-6 py-4 shadow-md space-y-4 text-sm font-medium">
+            <ul className="space-y-3">
+              <li>Home</li>
+              <li>Listings</li>
+              <li>Blog</li>
+              <li>Pages</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Signin</li>
+            </ul>
+            <button className="w-full border-2 border-black py-2 rounded-xl">
+              Submit Listing
+            </button>
+          </div>
+        )}
       </nav>
 
       {/* ================= HERO CONTENT ================= */}
@@ -109,7 +142,7 @@ const Hero = () => {
                    p-2 md:p-4 
                    rounded-full shadow-lg transition"
       >
-        <FaChevronLeft size={20} />
+        <FaChevronLeft size={7} />
       </button>
 
       <button
@@ -119,7 +152,7 @@ const Hero = () => {
                    p-2 md:p-4 
                    rounded-full shadow-lg transition"
       >
-        <FaChevronRight size={20} />
+        <FaChevronRight size={7} />
       </button>
     </section>
   );

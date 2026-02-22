@@ -33,8 +33,11 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo + Phone */}
           <div className="flex items-center gap-3">
-            <img src={Logo.logo3} alt="logo" className="w-10 sm:w-16" />
-
+            <img
+              src={Logo.logo3}
+              alt="logo"
+              className="w-30 object-contain h-10"
+            />
             <h5
               className={`text-sm sm:text-lg md:text-xl font-bold transition ${
                 scrolled ? "text-black" : "text-white"
@@ -91,9 +94,9 @@ const Hero = () => {
       <div className="relative z-10 min-h-[100dvh] flex items-center pt-20 px-20">
         <div className="container mx-auto px-4 sm:px-6 text-white">
           <div className="max-w-xl">
-            <p className="text-3xl sm:text-base text-2xl  mb-2">$124,67</p>
+            <p className="text-3xl  sm:text-base text-2xl  mb-2">$124,67</p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            <h1 className="text-3xl w-full sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Ranger-Black
             </h1>
 

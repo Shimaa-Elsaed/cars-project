@@ -38,43 +38,62 @@ const Hero = () => {
         </ul>
 
         {/* Search Box */}
-        <div className="w-full flex justify-center mt-10">
+        {/* Search Box */}
+        <div className="w-full flex justify-center mt-8">
           <div
-            className="flex items-center 
-               bg-white 
-               rounded-full 
-               shadow-xl 
-               
-                px-0
-               w-full sm:w-4/5 lg:w-1/2"
+            className="
+      bg-white 
+      rounded-2xl 
+      shadow-xl 
+      w-full sm:w-4/5 lg:w-1/2
+      p-2
+      flex flex-col gap-3
+      sm:flex-row sm:items-center
+    "
           >
             {/* الكلمات */}
-            <div className="flex flex-1 justify-between text-black font-medium text-sm sm:text-base px-4 ">
-              <span className="cursor-pointer hover:text-blue-600 transition font-bold">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-black font-semibold text-sm sm:text-base w-full">
+              <span className="cursor-pointer hover:text-blue-600 transition text-center sm:text-left">
                 Any Makers
               </span>
-              <span className="cursor-pointer hover:text-blue-600 transition font-bold">
+
+              <span className="cursor-pointer hover:text-blue-600 transition text-center sm:text-left">
                 Any Models
               </span>
-              <span className="cursor-pointer hover:text-blue-600 transition font-bold">
+
+              <span className="cursor-pointer hover:text-blue-600 transition hidden sm:block">
                 Prices
               </span>
-              <span className="cursor-pointer hover:text-blue-600 transition font-bold">
+
+              <span className="cursor-pointer hover:text-blue-600 transition hidden sm:block">
                 All Prices
+              </span>
+
+              <span className="cursor-pointer hover:text-blue-600 transition hidden sm:block">
+                content
+              </span>
+              <span className="cursor-pointer hover:text-blue-600 transition hidden sm:block">
+                About
+              </span>
+
+              <span className="cursor-pointer hover:text-blue-600 transition hidden sm:block">
+                All Menue
               </span>
             </div>
 
             {/* الزرار */}
             <button
-              className="ml-6 
-                 bg-blue-700 
-                 hover:bg-blue-800 
-                 text-white 
-                 font-semibold 
-                 px-8 py-3 
-                 rounded-full 
-                 transition-all duration-300 
-                 shadow-md hover:shadow-lg"
+              className="
+        bg-blue-700 
+        hover:bg-blue-800 
+        text-white 
+        font-semibold 
+        py-3 
+        px-6
+        rounded-xl 
+        transition-all duration-300 
+        w-full sm:w-auto
+      "
             >
               Search
             </button>

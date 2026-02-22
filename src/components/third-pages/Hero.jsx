@@ -32,7 +32,11 @@ const Hero = () => {
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src={Logo.logo2} alt="logo" className="w-8 sm:w-10" />
+            <img
+              src={Logo.logo3}
+              alt="logo"
+              className="w-30 object-contain h-10"
+            />{" "}
             <h1
               className={`text-lg sm:text-2xl font-bold transition ${
                 scrolled ? "text-black" : "text-white"

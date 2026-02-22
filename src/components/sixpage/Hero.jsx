@@ -4,10 +4,12 @@ import { Logo } from "@/assets/image";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "../ui/button";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Hero = () => {
   const [scrol, setScrol] = useState(false);
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   // Detect Scroll
   useEffect(() => {
@@ -40,8 +42,8 @@ const Hero = () => {
             <img src={Logo.logo3} alt="logo" className="w-28" />
 
             {/* Links */}
-            <div
-              className={`hidden lg:flex items-center gap-8 font-medium transition ${
+            <ul
+              className={`hidden md:flex items-center gap-6 font-medium transition ${
                 scrol ? "text-black" : "text-white"
               }`}
             >
@@ -60,7 +62,10 @@ const Hero = () => {
               <a href="#" className="hover:text-blue-500 transition">
                 About
               </a>
-            </div>
+              <a href="#" className="hover:text-blue-500 transition">
+                Signup
+              </a>
+            </ul>
           </div>
 
           {/* Right Side */}
@@ -69,12 +74,15 @@ const Hero = () => {
               scrol ? "text-black" : "text-white"
             }`}
           >
-            <a href="#" className="hover:text-blue-500 transition">
+            <a
+              href="#"
+              className="hover:text-blue-500 transition hidden sm:block"
+            >
               Signup
             </a>
 
             <button
-              className={`border-2 px-5 py-2 rounded-lg transition duration-300 ${
+              className={`border-2 px-5 py-2 rounded-lg transition duration-300 hidden sm:block ${
                 scrol
                   ? "border-black text-black hover:bg-black hover:text-white"
                   : "border-white text-white hover:bg-blue-700"
@@ -83,7 +91,38 @@ const Hero = () => {
               Add Listing
             </button>
           </div>
+
+          {/* Mobile Menu Icon */}
+          <div className="md:hidden">
+            {open ? (
+              <HiX
+                size={26}
+                onClick={() => setOpen(false)}
+                className="cursor-pointer"
+              />
+            ) : (
+              <HiMenu
+                size={26}
+                onClick={() => setOpen(true)}
+                className="cursor-pointer"
+              />
+            )}
+          </div>
         </div>
+
+        {open && (
+          <div className="md:hidden bg-white px-6 py-4 shadow-md space-y-4 text-sm font-medium">
+            <ul className="space-y-3">
+              <li>Home</li>
+              <li>Listings</li>
+              <li>Blog</li>
+              <li>Pages</li>
+              <li>About</li>
+              <li>Contact</li>
+              <li>Signin</li>
+            </ul>
+          </div>
+        )}
       </nav>
 
       {/* Left Arrow */}

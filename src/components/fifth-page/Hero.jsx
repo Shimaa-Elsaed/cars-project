@@ -4,8 +4,12 @@ import { Logo } from "@/assets/image";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Button } from "../ui/button";
+import { HiMenu, HiX } from "react-icons/hi";
+
 const Hero = () => {
   const [scrol, setScrol] = useState(false);
+  const [open, setOpen] = useState(false);
+
   const navigate = useNavigate();
   // Detect Scroll
   useEffect(() => {
@@ -35,8 +39,8 @@ const Hero = () => {
             </div>
 
             {/* Links */}
-            <div
-              className={`flex items-center gap-8 font-medium transition ${
+            <ul
+              className={`hidden md:flex items-center gap-6 font-medium transition ${
                 scrol ? "text-black" : "text-white"
               }`}
             >
@@ -57,24 +61,50 @@ const Hero = () => {
               </a>
               <a href="#" className="hover:text-blue-500 transition">
                 Signup
-              </a>{" "}
-              <div>
-                <div className="hidden md:block">
-                  <button
-                    className={`px-5 py-2 rounded-lg transition duration-300 border-2
+              </a>
+            </ul>
+            <div className="hidden md:block">
+              <button
+                className={`px-5 py-2 rounded-lg transition duration-300 border-2
     ${
       scrol
         ? "bg-black text-white border-black hover:bg-gray-900"
         : "bg-transparent text-white border-white hover:bg-white hover:text-black"
     }
   `}
-                  >
-                    Add Listing
-                  </button>
-                </div>
-              </div>
+              >
+                Add Listing
+              </button>
+            </div>
+            <div className="md:hidden">
+              {open ? (
+                <HiX
+                  size={26}
+                  onClick={() => setOpen(false)}
+                  className="cursor-pointer"
+                />
+              ) : (
+                <HiMenu
+                  size={26}
+                  onClick={() => setOpen(true)}
+                  className="cursor-pointer"
+                />
+              )}
             </div>
           </div>
+
+          {open && (
+            <div className="md:hidden bg-white px-6 py-4 shadow-md space-y-4 text-sm font-medium">
+              <ul className="space-y-3">
+                <li>Home</li>
+                <li>Listings</li>
+                <li>Blog</li>
+                <li>Pages</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+          )}
         </nav>
         <button
           onClick={() => navigate("/page4")}

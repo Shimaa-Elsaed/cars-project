@@ -21,7 +21,13 @@ const Hero = () => {
 
           {/* Center Logo */}
           <div>
-            <img src={Logo.logo3} className="h-10 object-contain" />
+            <div className="">
+              <img
+                src={Logo.logo3}
+                alt="logo"
+                className="w-30 object-contain h-10"
+              />
+            </div>
           </div>
 
           {/* Right */}

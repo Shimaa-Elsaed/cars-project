@@ -30,41 +30,64 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-8 leading-tight">
           Find Your Perfect Car
         </h1>
-
         {/* Search Box */}
         <div
           className="
-          bg-white text-black font-semibold
-          flex flex-col sm:flex-row
-          items-center
-          rounded-3xl
-          w-full sm:w-4/5 lg:w-1/2
-          p-4
-          gap-4
-          shadow-xl
-        "
+    bg-white text-black font-semibold
+    rounded-3xl
+    w-full sm:w-4/5 lg:w-1/2
+    p-4
+    shadow-xl
+    flex flex-col items-center
+    gap-3
+  "
         >
-          {/* Filters */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-between text-sm sm:text-base text-center sm:text-left">
+          {/* Mobile View */}
+          <div className="w-full sm:hidden">
+            {/* Text Row */}
+            <div className="flex flex-col justify-between w-full text-center">
+              <span className="cursor-pointer p-2 ">Any Makers</span>
+              <span className="cursor-pointer p-2 ">Any Models</span>
+            </div>
+
+            {/* Search Icon Centered */}
+            <div className="flex justify-center mt-2">
+              <span
+                className="
+          bg-blue-700 hover:bg-blue-800
+          text-white
+          p-2
+          rounded-full
+          shadow-md
+          transition
+          cursor-pointer
+        "
+              >
+                <CiSearch size={20} />
+              </span>
+            </div>
+          </div>
+
+          {/* Desktop View */}
+          <div className="hidden sm:flex w-full justify-between text-sm sm:text-base items-center">
             <span className="cursor-pointer">Any Makers</span>
             <span className="cursor-pointer">Any Models</span>
             <span className="cursor-pointer">Prices</span>
             <span className="cursor-pointer">All Prices</span>
+            <span
+              className="
+        bg-blue-700 hover:bg-blue-800
+        text-white
+        p-3
+        rounded-full
+        shadow-md
+        transition
+        cursor-pointer
+      "
+            >
+              <CiSearch size={18} />
+            </span>
           </div>
-
-          {/* Search Button */}
-          <button
-            className="
-            bg-blue-700 hover:bg-blue-800
-            transition duration-300
-            text-white
-            p-3
-            rounded-full
-            shadow-md
-          "
-          >
-            <CiSearch size={13} />
-          </button>
         </div>
       </div>
 
