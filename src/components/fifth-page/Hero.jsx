@@ -123,7 +123,7 @@ const Hero = () => {
           <div className="container mx-auto px-24 text-white">
             <div className="max-w-2xl">
               <p className=" text-5xl">$124,67</p>
-              <h1 className="text-3xl md:text-6xl font-bold mb-6">
+              <h1 className=" text-xl sm:text-3xl md:text-6xl font-bold mb-6">
                 Marcedes-Benz,C- Class{" "}
               </h1>
               <Button className="text-black bg-white">Learn More</Button>

@@ -39,7 +39,7 @@ const Hero = () => {
               className="w-30 object-contain h-10"
             />
             <h5
-              className={`text-sm sm:text-lg md:text-xl font-bold transition ${
+              className={`text-sm sm:text-lg md:text-xl font-bold transition hidden sm:block ${
                 scrolled ? "text-black" : "text-white"
               }`}
             >
@@ -96,7 +96,7 @@ const Hero = () => {
           <div className="max-w-xl">
             <p className="text-3xl  sm:text-base text-2xl  mb-2">$124,67</p>
 
-            <h1 className="text-3xl w-full sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            <h1 className=" text-xl sm: text-3xl w-full sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
               Ranger-Black
             </h1>
 
